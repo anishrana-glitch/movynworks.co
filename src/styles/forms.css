@@ -1,0 +1,206 @@
+/* Contact form */
+
+.contact-layout {
+  display: grid;
+  gap: 56px;
+}
+@media (min-width: 1200px) {
+  .contact-layout {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 96px;
+    align-items: start;
+  }
+  .contact-aside {
+    position: sticky;
+    top: calc(var(--nav-h) + 32px);
+  }
+}
+
+.form {
+  display: grid;
+  gap: 24px;
+}
+.form__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+@media (min-width: 768px) {
+  .form__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .field--full {
+    grid-column: 1 / -1;
+  }
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.field__label {
+  font-family: var(--font-display);
+  font-size: 0.9375rem;
+  color: var(--text);
+}
+.field__label .optional {
+  margin-left: 6px;
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+.field__label .required {
+  margin-left: 4px;
+  color: var(--gold-300);
+}
+.field__control {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 16px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--ink-800);
+  color: var(--text);
+  font-size: 1rem;
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease);
+}
+.field__control::placeholder {
+  color: var(--text-3);
+}
+.field__control:hover {
+  border-color: rgba(242, 240, 234, 0.32);
+}
+.field__control:focus-visible {
+  outline: 2px solid var(--gold-300);
+  outline-offset: 2px;
+  border-color: var(--gold-400);
+  border-radius: var(--r-md);
+}
+.field__control[aria-invalid='true'] {
+  border-color: var(--error);
+}
+textarea.field__control {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.6;
+}
+select.field__control {
+  appearance: none;
+  padding-right: 44px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%23b4b9c4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+select.field__control option,
+select.field__control optgroup {
+  background: var(--ink-800);
+  color: var(--text);
+}
+.field__hint {
+  font-size: 0.8125rem;
+  color: var(--text-3);
+}
+.field__error {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: var(--error);
+}
+.field__error svg {
+  width: 16px;
+  height: 16px;
+  flex: none;
+  margin-top: 3px;
+}
+
+/* Honeypot: off-screen but not display:none */
+.hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form__summary {
+  padding: 18px 20px;
+  border: 1px solid var(--error);
+  border-radius: var(--r-md);
+  background: rgba(240, 138, 138, 0.08);
+  color: var(--text);
+}
+.form__summary h2 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+.form__summary ul {
+  display: grid;
+  gap: 4px;
+  font-size: 0.9375rem;
+}
+.form__summary a {
+  color: var(--error);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.form__status {
+  padding: 18px 20px;
+  border: 1px solid var(--line-strong);
+  border-radius: var(--r-md);
+  background: var(--ink-800);
+  color: var(--text-2);
+}
+.form__status--success {
+  border-color: var(--success);
+  background: rgba(143, 208, 166, 0.08);
+}
+.form__status h2 {
+  margin-bottom: 6px;
+  font-size: 1.125rem;
+}
+.form__footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+.form__fineprint {
+  font-size: 0.875rem;
+  color: var(--text-3);
+}
+.form__fineprint a {
+  color: var(--text-2);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.aside-steps {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--line);
+}
+.aside-steps li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 4px 12px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+.aside-steps .num {
+  font-family: var(--font-display);
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-400);
+  padding-top: 3px;
+}
+.aside-steps h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 4px;
+}
+.aside-steps p {
+  font-size: 0.9375rem;
+}

@@ -1,0 +1,8 @@
+/* Fixes the cascade layer order for the whole app, so Tailwind utilities
+   (used only by shadcn / SmoothUI components) always beat the site's base reset. */
+@layer theme, base, components, utilities;
+
+/* Tailwind without preflight, so it never fights the site's own CSS reset.
+   Only theme + utilities are loaded, for shadcn / SmoothUI components. */
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/utilities.css" layer(utilities);

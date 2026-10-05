@@ -1,0 +1,62 @@
+/* Design tokens. Colours come from the Movyn logo: a near-black ink field,
+   warm off-white (the reversed wordmark) and the gold ribbon in the M. */
+:root {
+  /* Surfaces */
+  --ink-950: #07090c;
+  --ink-900: #0a0c10;
+  --ink-850: #0e1218;
+  --ink-800: #11151c;
+  --ink-700: #171c26;
+  --ink-600: #1f2531;
+
+  /* Lines */
+  --line: rgba(242, 240, 234, 0.09);
+  --line-strong: rgba(242, 240, 234, 0.2);
+
+  /* Text (all pass 4.5:1 on --ink-900) */
+  --text: #f2f0ea;
+  --text-2: #b4b9c4;
+  --text-3: #8a91a0;
+
+  /* Accent: the logo ribbon */
+  --gold-300: #f1ce98;
+  --gold-400: #d8a867;
+  --gold-600: #9c6a38;
+  --gold-gradient: linear-gradient(135deg, #9c6a38 0%, #f1ce98 55%, #d8a867 100%);
+
+  /* Feedback */
+  --error: #f08a8a;
+  --success: #8fd0a6;
+
+  /* Shape */
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+
+  /* Layout */
+  --container: 1200px;
+  --gutter: clamp(20px, 4vw, 40px);
+  --nav-h: 72px;
+  --section-y: clamp(48px, 6vw, 80px);
+
+  /* Type */
+  --font-display: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
+  --font-body: 'Work Sans Variable', 'Work Sans', system-ui, sans-serif;
+
+  /* Motion */
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --t-fast: 200ms;
+  --t-med: 350ms;
+
+  /* z-index scale */
+  --z-header: 50;
+  --z-island: 40;
+  --z-skip: 100;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --nav-h: 64px;
+  }
+}
